@@ -5,6 +5,6 @@ dotnet publish -c Debug ./Learns.Pluginable.WebApp/Learns.Pluginable.WebApp.cspr
 mkdir -p ./x/Plugins/Sample
 cp ./Learns.Pluginable.PluginApp/bin/Debug/net6.0/Learns.Pluginable.PluginApp.dll ./x/Plugins/Sample
 #cp ./Learns.Pluginable.PluginApp/bin/Debug/net6.0/publish/Learns.Pluginable.PluginApp.dll ./x/Plugins/Sample
-cp -R ./Learns.Pluginable.PluginApp/Areas/Plugins/Sample/Views ./x/Plugins/Sample/Views
+#cp -R ./Learns.Pluginable.PluginApp/Areas/Plugins/Sample/Views ./x/Plugins/Sample/Views
 cd ./x
 dotnet Learns.Pluginable.WebApp.dll

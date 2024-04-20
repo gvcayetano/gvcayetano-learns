@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Learns.Pluginable.WebApp;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 namespace Learns.Pluginable.WebApp
 {
 internal class Program
@@ -73,7 +73,7 @@ internal class Program
         // app.MapControllerRoute(
         //     name: "sample",
         //     pattern: "Plugins/Sample/{controller=Home}/{action=Index}/{id?}");
-
+        
         app.Run();
     }
 
@@ -103,21 +103,23 @@ internal class Program
             }
 
             
-                            services.Configure<RazorViewEngineOptions>(options =>{
-                                foreach(var e in expanders){
+            services.Configure<RazorViewEngineOptions>(options =>
+            {
+                foreach(var e in expanders)
+                {
+                    options.ViewLocationExpanders.Add((IViewLocationExpander)Activator.CreateInstance(e));
+                }
+            });
 
-                                options.ViewLocationExpanders
-                                .Add((IViewLocationExpander)Activator.CreateInstance(e));
-                                }
-                            });
-
-                                foreach(var plugin in pluginAssemblies){
-                                    
-                            services.AddControllersWithViews()
-                            .AddApplicationPart(plugin);
-                                }
-
-
+            foreach(var plugin in pluginAssemblies)
+            {
+                services.AddControllersWithViews().AddApplicationPart(plugin);
+                var fileProvider = new ManifestEmbeddedFileProvider(plugin, "wwwroot");
+                services.Configure<MvcRazorRuntimeCompilationOptions>(options => 
+                {
+                    options.FileProviders.Add(fileProvider);
+                });
+            }
         }
     }
 }
