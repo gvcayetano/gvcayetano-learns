@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Learns.Pluginable.Apps", "Learns.Pluginable.Apps", "{2941F947-E964-4CBF-A565-66CB021196DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CAD9B270-64D7-4AB1-B63C-6B9086DF71BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learns.Pluginable.WebApp", "Learns.Pluginable.Apps\src\Learns.Pluginable.WebApp\Learns.Pluginable.WebApp.csproj", "{ECB5DD8F-C4FA-4A71-9A05-3E759C66CA76}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learns.Pluginable.PluginApp", "Learns.Pluginable.Apps\src\Learns.Pluginable.PluginApp\Learns.Pluginable.PluginApp.csproj", "{732C5807-AAD2-4C60-904C-A196CC8C2809}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECB5DD8F-C4FA-4A71-9A05-3E759C66CA76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECB5DD8F-C4FA-4A71-9A05-3E759C66CA76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECB5DD8F-C4FA-4A71-9A05-3E759C66CA76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECB5DD8F-C4FA-4A71-9A05-3E759C66CA76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{732C5807-AAD2-4C60-904C-A196CC8C2809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{732C5807-AAD2-4C60-904C-A196CC8C2809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{732C5807-AAD2-4C60-904C-A196CC8C2809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{732C5807-AAD2-4C60-904C-A196CC8C2809}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CAD9B270-64D7-4AB1-B63C-6B9086DF71BE} = {2941F947-E964-4CBF-A565-66CB021196DC}
+		{ECB5DD8F-C4FA-4A71-9A05-3E759C66CA76} = {CAD9B270-64D7-4AB1-B63C-6B9086DF71BE}
+		{732C5807-AAD2-4C60-904C-A196CC8C2809} = {CAD9B270-64D7-4AB1-B63C-6B9086DF71BE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {035E8249-EB56-4E1C-930E-4E31EBF28B0F}
+	EndGlobalSection
+EndGlobal
